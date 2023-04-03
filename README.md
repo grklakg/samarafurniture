@@ -1,102 +1,38 @@
 # samarafurniture
-## Установка необходимых инструментов
+## Install requirements tools
 
-1. Установите Python:
-``` 
-sudo apt-get update
-sudo apt-get install python3.8
-sudo apt-get install python3-pip
-```
-
-3. Установите Git:
+1. Install Git:
 ```
 sudo apt-get install git
 ```
 
-## Настройка проекта
+## Project set up
 
-1. Клонируйте проект с GitHub:
+1. Clone the repository:
 ```
-git clone https://github.com/your-repo-name/your-project-name.git
-```
-
-2. Перейдите в каталог проекта:
-```
-cd your-project-name
+git clone hhttps://github.com/grklakg/samarafurniture.git
 ```
 
-3. Создайте и активируйте виртуальное окружение:
+2. Go to project path:
+```
+cd samarafurniture
+```
+
+3. Create a virtualenv and activate it:
 ```
 python3 -m venv env
 source env/bin/activate
 ```
 
-4. Установите зависимости:
+4. Install Flaskr:
 ```
-pip install -r requirements.txt
+pip install -e .
 ```
 
-5. Инициализируйте базу данных для вашего проекта:
+5. Run:
 ```
 flask --app flaskr init-db
+flask --app flaskr run --debug
 ```
 
-## Запуск приложения Flask
-
-1. Примените миграции базы данных:
-```
-flask db init
-flask db migrate -m "initial migration"
-flask db upgrade
-```
-
-2. Запустите приложение Flask:
-```
-export FLASK_APP = myapp.py
-export FLASK_ENV = development
-flask run --port=8080 --host=0.0.0.0
-```
-
-3. Откройте браузер и перейдите по URL-адресу http://your-server-ip-address:8080, чтобы просмотреть свой сайт.
-
-## Настройка Nginx
-
-1. Установите Nginx:
-```
-sudo apt-get install nginx
-```
-
-2. Создайте конфигурационный файл в /etc/nginx/sites-available:
-```
-sudo nano /etc/nginx/sites-available/your-site-name
-```
-
-3. Вставьте следующий код в ваш файл конфигурации:
-```
-server {
-    listen 80;
-    server_name your-server-name.com www.your-server-name.com;
-
-    location / {
-        include proxy_params;
-        proxy_pass http://127.0.0.1:8080;
-    }
-}
-```
-
-4. Включите файл конфигурации:
-```
-sudo ln -s /etc/nginx/sites-available/your-site-name /etc/nginx/sites-enabled/
-```
-
-5. Проверьте конфигурационный файл Nginx:
-```
-sudo nginx -t
-```
-
-6. Перезапустите Nginx:
-```
-sudo systemctl restart nginx
-```
-
-7. Посетите свой сайт, перейдя по URL-адресу вашего сервера, чтобы увидеть, как он работает.
+Open http://127.0.0.1:5000 in a browser.
