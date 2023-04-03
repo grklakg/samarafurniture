@@ -8,11 +8,6 @@ sudo apt-get install python3.8
 sudo apt-get install python3-pip
 ```
 
-2. Установите PostgreSQL:
-```
-sudo apt-get install postgresql postgresql-contrib
-```
-
 3. Установите Git:
 ```
 sudo apt-get install git
@@ -20,7 +15,7 @@ sudo apt-get install git
 
 ## Настройка проекта
 
-1. Склонируйте проект с GitHub:
+1. Клонируйте проект с GitHub:
 ```
 git clone https://github.com/your-repo-name/your-project-name.git
 ```
@@ -41,14 +36,9 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-5. Создайте базу данных PostgreSQL для вашего проекта:
+5. Инициализируйте базу данных для вашего проекта:
 ```
-sudo -u postgres createdb your-db-name
-```
-
-6. Отредактируйте файл конфигурации приложения (например, config.py) и введите данные для подключения к базе данных PostgreSQL:
-```
-SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:password@localhost/your-db-name'
+flask --app flaskr init-db
 ```
 
 ## Запуск приложения Flask
