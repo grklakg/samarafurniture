@@ -24,7 +24,7 @@ python3 -m venv env
 source env/bin/activate
 ```
 
-4. Install Flaskr:
+4. Install project in the virtual environment.
 ```
 pip install -e .
 ```
