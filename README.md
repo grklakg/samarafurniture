@@ -31,8 +31,8 @@ pip install -e .
 
 5. Run:
 ```
-flask --app flaskr init-db
-flask --app flaskr run --debug
+flask --app samarafurniture init-db
+flask --app samarafurniture run --debug
 ```
 
 Open http://127.0.0.1:5000 in a browser.
